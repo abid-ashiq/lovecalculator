@@ -3,9 +3,11 @@ function calculateLove() {
     let name1 = document.getElementById("name1").value.trim().toLowerCase();
     let name2 = document.getElementById("name2").value.trim().toLowerCase();
 
-    let specialNames = ["abid", "hani", "mushtaq", "sahana", "tamseel", "adeeba", 
-    "deebu", "fazila", "rutba", "rutbah", "fazilah", "tahila", 
-    "sanjana", "sultana", "fathima"];
+    let specialNames = [
+        "abid", "hani", "mushtaq", "sahana", "tamseel", 
+        "adeeba", "deebu", "fazila", "rutba", "rutbah", 
+        "fazilah", "tahila", "sanjana", "sultana", "fathima"
+    ];
 
     let percentage;
 
@@ -36,17 +38,17 @@ function calculateLove() {
     document.getElementById("result").innerHTML =
         "Love Score: " + percentage + "% <br>" + message;
 
-    // ✅ Your Google Apps Script URL
-    fetch("https://script.google.com/macros/s/AKfycbwPsENDGw0pe2Yk2fY0xdl4jwUY8SsHkeW_rrNWbnusyFu8Uk_NDqLf-jzQqJMvS-RW/exec", {
+    // 🔥 SEND DATA TO GOOGLE SHEETS
+    fetch("https://script.google.com/macros/s/AKfycbwNURF2gJiDo4scmOf0Mg9PaUVUMkZWbGIZZQn-GLM/dev", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify({
             name1: name1,
             name2: name2,
             percentage: percentage
         })
-    })
-    .then(response => response.text())
-    .then(data => console.log("Saved:", data))
-    .catch(error => console.error("Error:", error));
+    });
 }
