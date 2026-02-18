@@ -37,7 +37,7 @@ function calculateLove() {
         "Love Score: " + percentage + "% <br>" + message;
 
     // ✅ Your Google Apps Script URL
-    fetch("https://script.google.com/macros/s/AKfycbxo3_B7g__UuZ_FGAux7uaYACGbaT_-v3za2pvmI-MFti-tTHxvJ-nKf6FXI-PePGFA/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbwPsENDGw0pe2Yk2fY0xdl4jwUY8SsHkeW_rrNWbnusyFu8Uk_NDqLf-jzQqJMvS-RW/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
